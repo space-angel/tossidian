@@ -14,7 +14,8 @@
 
 ## 스크린샷
 
-![토스 스타일 옵시디언 테마 미리보기](screenshots/preview.png)
+![image](https://github.com/user-attachments/assets/0adae42d-b8cb-4f05-8d16-d270b9698169)
+
 
 ## 설치 방법
 
