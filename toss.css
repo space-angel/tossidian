@@ -1,0 +1,330 @@
+/* =========================
+   Toss Style Obsidian Theme (Light Mode)
+   Inspired by toss.tech
+   ========================= */
+
+/* =========================
+   CSS Variables
+   ========================= */
+.theme-light {
+  /* Colors */
+  --accent-h: 210;
+  --accent-s: 90%;
+  --accent-l: 60%;
+  
+  /* Background Colors */
+  --background-primary: #ffffff;
+  --background-primary-alt: #f9fafb;
+  --background-secondary: #f2f4f6;
+  --background-secondary-alt: #efefef;
+  
+  /* Text Colors */
+  --text-header: #272f3a;
+  --text-normal: #5c646f;
+  --text-muted: #999999;
+  --text-accent: #3182f6;
+  --text-accent-hover: #007bff;
+  --text-error: #e42939;
+  --text-selection: rgba(49, 130, 246, 0.2);
+  
+  /* UI Elements */
+  --interactive-normal: #f9fafb;
+  --interactive-hover: #f2f4f6;
+  --background-modifier-border: #e0e0e0;
+  --scrollbar-thumb-bg: rgba(0, 0, 0, 0.1);
+  --panel-border-color: #e0e0e0;
+  
+  /* Typography */
+  --font-ui: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --font-text: "Pretendard", "Apple SD Gothic Neo", sans-serif;
+  --font-code: 'Fira Code', monospace;
+  
+  /* Tag Styling */
+  --tag-size: 14px;
+  --tag-weight: 500;
+  --tag-color: #4e5968;
+  --tag-background: rgb(242, 244, 246);
+  --tag-radius: 32px;
+  --tag-padding-x: 10px;
+  --tag-padding-y: 6px;
+  
+  /* Code Block Styling */
+  --code-background: var(--tag-background);
+  --code-normal: var(--tag-color);
+  --code-comment: var(--text-muted);
+  --code-function: var(--text-accent);
+  --code-important: var(--text-accent);
+  --code-keyword: var(--text-accent);
+  --code-operator: var(--text-accent);
+  --code-property: var(--text-accent);
+  --code-punctuation: var(--text-muted);
+  --code-string: var(--text-accent);
+  --code-tag: var(--text-accent);
+  --code-value: var(--text-accent);
+  
+  /* Blockquote Styling */
+  --blockquote-background-color: #ffffff00;
+  --blockquote-border-thickness: 2px;
+  --blockquote-border-color: #272f3a;
+  --blockquote-font-style: normal;
+  --blockquote-font-weight: 700;
+  --blockquote-color: #272f3a;
+}
+
+/* =========================
+   Layout & Base Styles
+   ========================= */
+.workspace-split.mod-left-split,
+.workspace-ribbon.mod-left,
+.workspace-tabs,
+.status-bar {
+  background-color: var(--background-secondary-alt) !important;
+  border-color: var(--background-modifier-border);
+  font-family: var(--font-ui);
+}
+
+.status-bar {
+  padding: 6px 10px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* =========================
+   Editor Styles
+   ========================= */
+.cm-s-obsidian,
+.cm-scroller,
+.cm-content {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.cm-s-obsidian::-webkit-scrollbar,
+.cm-scroller::-webkit-scrollbar,
+.cm-content::-webkit-scrollbar {
+  display: none !important;
+}
+
+.cm-s-obsidian {
+  font-family: var(--font-text);
+  font-size: 16px;
+  color: var(--text-normal);
+  background-color: var(--background-primary);
+  font-weight: 400;
+  padding: 36px 32px;
+}
+
+/* =========================
+   Typography
+   ========================= */
+.cm-header,
+.markdown-preview-section h1,
+.markdown-preview-section h2,
+.markdown-preview-section h3,
+.markdown-preview-section h4,
+.markdown-preview-section h5,
+.markdown-preview-section h6 {
+  color: var(--text-header);
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+}
+
+.cm-header-1,
+.markdown-preview-section h1 { font-size: 2rem; margin: 1.5em 0 0.8em; }
+.cm-header-2,
+.markdown-preview-section h2 { font-size: 1.8rem; margin: 1.2em 0 0.6em; }
+.cm-header-3,
+.markdown-preview-section h3 { font-size: 1.4rem; margin: 1em 0 0.5em; }
+.cm-header-4,
+.markdown-preview-section h4 { font-size: 1.3rem; margin: 0.8em 0 0.4em; }
+.cm-header-5,
+.markdown-preview-section h5 { font-size: 1.2rem; margin: 0.7em 0 0.3em; }
+.cm-header-6,
+.markdown-preview-section h6 { font-size: 1.1rem; margin: 0.6em 0 0.2em; }
+
+/* =========================
+   UI Components
+   ========================= */
+button,
+.button,
+.mod-cta {
+  background-color: var(--text-accent);
+  color: white;
+  border-radius: 8px;
+  padding: 6px 12px;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+button:hover,
+.button:hover,
+.mod-cta:hover {
+  background-color: var(--text-accent-hover);
+}
+
+input,
+textarea,
+.search-input {
+  background-color: var(--background-primary-alt);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-family: var(--font-ui);
+  transition: border 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+.search-input:focus {
+  border-color: var(--text-accent);
+  outline: none;
+}
+
+/* =========================
+   Code Blocks
+   ========================= */
+.markdown-preview-view pre,
+.markdown-preview-view .code-block,
+.markdown-preview-section pre,
+.cm-s-obsidian pre,
+.cm-s-obsidian .code-block {
+  background-color: var(--code-background) !important;
+  color: var(--code-normal) !important;
+  border-radius: var(--tag-radius) !important;
+  padding: var(--tag-padding-y) var(--tag-padding-x) !important;
+  overflow-x: auto;
+  font-family: var(--font-code);
+  font-size: 0.95rem;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.markdown-preview-view code,
+.markdown-preview-section code,
+.cm-s-obsidian code:not(pre code) {
+  background-color: var(--code-background) !important;
+  border-radius: var(--tag-radius) !important;
+  padding: var(--tag-padding-y) var(--tag-padding-x) !important;
+  font-size: 0.9rem;
+  font-family: var(--font-code);
+}
+
+/* =========================
+   Callouts
+   ========================= */
+.callout {
+  --callout-border-width: 0px;
+  --callout-radius: 18px;
+  --callout-padding: 16px 32px;
+  --callout-content-padding: 16px;
+  --callout-content-background: #f7f9fa;
+  background-color: var(--callout-content-background) !important;
+  box-shadow: none;
+  border: none;
+}
+
+.callout-title,
+.callout-icon {
+  display: none !important;
+}
+
+.callout-content {
+  color: #23272f;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  background: none;
+}
+
+.callout-content ol > li,
+.callout-content ul > li {
+  margin-bottom: 12px;
+}
+
+.callout-content ol > li:last-child,
+.callout-content ul > li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================
+   Media Queries
+   ========================= */
+@media (min-width: 600px) {
+  .cm-s-obsidian,
+  .markdown-preview-section {
+    padding-left: 13%;
+    padding-right: 13%;
+  }
+}
+
+@media (min-width: 900px) {
+  .markdown-preview-section {
+    padding: 64px 120px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .cm-s-obsidian {
+    padding-left: 18%;
+    padding-right: 18%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .markdown-preview-section {
+    padding: 64px 200px;
+  }
+}
+
+/* =========================
+   Misc Styles
+   ========================= */
+.tooltip {
+  background-color: #333;
+  color: white;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 0.85rem;
+}
+
+.cm-line,
+.markdown-preview-section {
+  line-height: 28px;
+}
+
+.inline-title {
+  font-size: 2rem !important;
+  color: #333D4B !important;
+  font-weight: 600 !important;
+}
+
+.markdown-preview-section img,
+.cm-s-obsidian img {
+  border-radius: 24px;
+  margin: 10px 0;
+}
+
+.markdown-preview-section .metadata-container,
+.markdown-preview-section .frontmatter,
+.markdown-source-view .metadata-container,
+.markdown-source-view .frontmatter,
+.metadata-container,
+.frontmatter,
+.is-properties-mode,
+.metadata-properties {
+  display: none !important;
+}
+
+hr,
+.markdown-preview-section hr,
+.cm-s-obsidian hr {
+  border: none;
+  border-top: 1px solid #e0e4ea6b;
+  border-radius: 2px;
+  height: 0;
+  background: none;
+  margin: 32px 0;
+}
+
+
+
